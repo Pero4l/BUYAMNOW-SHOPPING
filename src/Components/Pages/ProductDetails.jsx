@@ -3,7 +3,10 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { TfiLocationPin } from 'react-icons/tfi'; 
+import { FaMinus } from "react-icons/fa6";
+import { HiPlus } from "react-icons/hi";
 import noImage from "/No_Image_Available.jpg" 
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const ProductDetails = ({ Server }) => {
@@ -36,13 +39,41 @@ const ProductDetails = ({ Server }) => {
     setCurrentIndex((currentIndex === images.length - 1) ? 0 : currentIndex + 1);
   };
 
+  const [count, setCount] = useState(0)
+
+  const countPlus = () => {
+    setCount(count + 1)
+  }
+
+  const countMinus = () => {
+    setCount(count - 1)
+
+    if(count === 0){
+     setCount(0)
+    }
+  }
+
+  
+const [addCart, setAddCart] = useState(false)
+
+const addToCart = () => {
+  const newCartState = !addCart
+  setAddCart(newCartState)
+
+  if (newCartState) {
+    toast.success('Added to cart successfully')
+  } else {
+    toast.error('Removed from cart successfully')
+  }
+}
+
   
 
   return (
     <>
     <div className="w-11/12 mx-auto">
     
-
+      <ToastContainer/>
 
 
  <div className="min-h-screen px-4 py-8 font-sans max-w-7xl mx-auto">
@@ -119,7 +150,7 @@ const ProductDetails = ({ Server }) => {
 
 
 
-          <div className="flex flex-wrap items-center gap-4 mb-5">
+          <div className="flex flex-wrap items-center gap-5 mb-5">
             <div className="text-sm font-medium">
               Price:
               <span className="text-lg border border-gray-300 p-1 ml-1 rounded">{product.price}</span>
@@ -129,10 +160,10 @@ const ProductDetails = ({ Server }) => {
             <span className="font-bold text-lg text-gray-400">|</span>
             <div className="flex items-center gap-2">
               <span>Quantity:</span>
-              <div className="flex items-center border border-gray-300 rounded px-2">
-                <button className="text-lg">+</button>
-                <span className="px-2">1</span>
-                <button className="text-lg">-</button>
+              <div className="flex items-center border border-gray-300 rounded">
+                <button onClick={countPlus} className="text-lg p-2 "><HiPlus/></button>
+                <span className="px-2">{count}</span>
+                <button onClick={countMinus} className="text-lg p-2 "><FaMinus/></button>
               </div>
             </div>
           </div>
@@ -145,11 +176,11 @@ const ProductDetails = ({ Server }) => {
           
 
           <div className="flex flex-col gap-3">
-            <button className="py-2 w-full sm:w-7/12 border border-black rounded-md text-black font-medium">
+            <button className="py-2 w-full sm:full border border-black rounded-md text-black font-medium">
               Buy Now
             </button>
-            <button className="py-3 bg-black text-white rounded-md font-medium w-full sm:w-7/12">
-              Add to cart
+            <button onClick={addToCart} className={addCart ? "py-3 bg-green-600 text-white rounded-md font-medium w-full sm:w-full" : "py-3 bg-black text-white rounded-md font-medium w-full sm:w-full"}>
+              {addCart ? 'Added' : 'Add to cart'}
             </button>
           </div>
 
@@ -157,6 +188,7 @@ const ProductDetails = ({ Server }) => {
             <select className="w-full border border-green-700 outline-none rounded-md px-4 py-3 text-green-700">
               <option>Select your location</option>
               <option>Lagos</option>
+              <option>Plateau</option>
               <option>Abuja</option>
             </select>
           </div>
@@ -171,8 +203,8 @@ const ProductDetails = ({ Server }) => {
     <img
       key={idx}
       src={img}
-      alt={`Thumb ${idx + 1}`}
-      className={`w-[72px] lg:w-24 h-auto rounded cursor-pointer border-2 ${
+      alt={`Image ${idx + 1}`}
+      className={`w-[72px] md:w-[120px] lg:w-24 h-auto rounded cursor-pointer border-2 ${
         currentIndex === idx + 1 ? 'border-black' : 'border-transparent'
       }`}
       onClick={() => setCurrentIndex(idx + 1)}

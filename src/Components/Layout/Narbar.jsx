@@ -37,11 +37,15 @@ const Navbar = () => {
               <LuUserRound className="lg:text-3xl text-xl font-bold text-black relative bottom-1" />
             </button>
             
-            <Link to="/cart">
-            <button>
-              <FiShoppingCart className="lg:text-3xl text-xl font-bold text-black" />
-            </button>
-            </Link>
+            <Link to="/cart" className="relative inline-block">
+  <button className="relative">
+    <FiShoppingCart className="lg:text-3xl text-xl font-bold text-black" />
+    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs lg:text-sm px-1.5 py-0.5 rounded-full font-semibold">
+      0
+    </span>
+  </button>
+</Link>
+
 
            <TbMenuDeep className="text-3xl lg:hidden"/>
           </div>
