@@ -19,7 +19,7 @@ function App() {
             <Route element={<PageLayout />}>
             <Route path="/" element={<Home  Server={Server}/>} />
             <Route path="/cart" element={<ShoppingCart />} />
-            <Route path='/product/:id' element={<ProductDetails Server={Server}/> } />
+            <Route path='product/:id' element={<ProductDetails Server={Server}/> } />
             </Route>
         </Routes>
       </div>
