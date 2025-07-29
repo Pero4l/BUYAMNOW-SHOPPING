@@ -18,7 +18,7 @@ const Footer = () => {
               <br className="lg:hidden" /> space for all{" "}
               <br className="hidden lg:block" /> your stuff.
             </p>
-            <h1 className="lg:text-5xl text-2xl w-74 font-light mt-10 flex gap-2">
+            <h1 className="lg:text-5xl text-2xl w-74 font-semi-bold mt-10 flex gap-2">
               BuyAmNow
               <span className="border border-white size-5 flex justify-center items-center text-sm rounded-full ">
                 R

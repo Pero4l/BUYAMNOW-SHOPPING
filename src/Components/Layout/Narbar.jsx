@@ -24,7 +24,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <h1 className="lg:text-3xl text-2xl text-black w-74 font-light lg:p-5 flex gap-[0.5px] lg:gap-2">
+          <h1 className="lg:text-3xl text-2xl text-black w-74 font-semibold lg:p-5 flex gap-[0.5px] lg:gap-2">
             BuyAmNow
             <span className="border border-green-950 lg:size-5 size-4 flex justify-center items-center text-xs lg:text-sm rounded-full ">
               R
@@ -47,26 +47,26 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Mobile search bar */}
+        {/* Desktop  search bar */}
         <div className="lg:block lg:w-2/5 mx-auto h-16 hidden relative rounded-xl shadow-sm shadow-stone-500 overflow-hidden">
           <button className="absolute size-16 border-none rounded-l-xl top-0 left-0 text-3xl flex justify-center items-center text-white bg-black">
             <CiSearch />
           </button>
           <input
             type="text"
-            placeholder="search for your favourite totebag, colour, design patterns"
+            placeholder="search for your favourite product...."
             className="focus:outline-none border-none w-full h-full pl-20"
           />
         </div>
 
-        {/* Desktop search bar */}
+        {/*  Mobile search bar */}
         <div className="lg:hidden block lg:w-2/5 w-11/12 mx-auto h-14 relative rounded-xl shadow-sm shadow-stone-500 overflow-hidden">
           <button className="absolute size-16 border-none rounded-l-xl top-0 left-0 text-3xl flex justify-center items-center text-stone-700">
             <CiSearch />
           </button>
           <input
             type="text"
-            placeholder="search for your favourite product.."
+            placeholder="search for your favourite product...."
             className="focus:outline-none border-none w-full h-full pl-13"
           />
           <button className="absolute top-[4px] right-[3px] h-12 size-12 flex justify-center gap-3 items-center bg-black rounded-lg text-white text-2xl">

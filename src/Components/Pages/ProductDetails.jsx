@@ -1,7 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
-import bag from '/Screenshot from 2025-07-05 11-12-57.png';
 import { TfiLocationPin } from 'react-icons/tfi'; 
 
 
@@ -32,7 +31,7 @@ const ProductDetails = ({ Server }) => {
           <img
             src={product.image}
             alt="Product image"
-            className="object-cover rounded-md w-full max-h-[450px]"
+            className="object-cover rounded-md w-full max-h-[500px]"
           />
         </div>
 
@@ -52,23 +51,34 @@ const ProductDetails = ({ Server }) => {
           
 
 
-          <h3 className="text-xl lg:text-2xl font-semibold">{product.name}</h3>
+          <h3 className="text-2xl lg:text-2xl font-semibold">{product.name}</h3>
+          
+
+          <p className="text-sm text-gray-600">
+            {product.info}
+          </p>
+
+
+        
+
+          <p>In Stock: {product.stock}</p>
 
 
           <div className="flex flex-wrap items-center gap-1">
             {[...Array(4)].map((_, i) => (
-              <span key={i} className="text-yellow-400 bg-black rounded-md p-2">
+              <span key={i} className="text-yellow-400 bg-black rounded-md p-1">
                 <AiFillStar />
               </span>
             ))}
-            <span className="p-2 bg-black text-yellow-400 rounded-md">
+            <span className="p-1 bg-black text-yellow-400 rounded-md">
               <AiOutlineStar />
             </span>
             <span className="p-1 ml-2 border rounded-md font-bold">2.4</span>
           </div>
 
 
-          <div className="flex flex-wrap items-center gap-4">
+
+          <div className="flex flex-wrap items-center gap-4 mb-5">
             <div className="text-sm font-medium">
               Price:
               <span className="text-lg border border-gray-300 p-1 ml-1 rounded">{product.price}</span>
@@ -86,9 +96,12 @@ const ProductDetails = ({ Server }) => {
             </div>
           </div>
 
-          <p className="text-sm text-gray-600">
-            {product.info}
-          </p>
+          
+         
+
+          {/*  */}
+
+          
 
           <div className="flex flex-col gap-3">
             <button className="py-2 w-full sm:w-7/12 border border-black rounded-md text-black font-medium">
