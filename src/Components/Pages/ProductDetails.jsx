@@ -1,7 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { TfiLocationPin } from 'react-icons/tfi'; 
+import noImage from "/No_Image_Available.jpg" 
 
 
 const ProductDetails = ({ Server }) => {
@@ -13,6 +15,28 @@ const ProductDetails = ({ Server }) => {
   if (!product) {
     return <div className="text-center text-red-500 mt-10">Product not found</div>;
   }
+
+  const images = [
+    product?.image || noImage,
+    product?.image1 || noImage,
+    product?.image2 || noImage,
+    product?.image3 || noImage,
+    product?.image4 || noImage,
+  ];
+
+  // State to track which image is currently shown
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Handlers for prev/next buttons
+  const prevImage = () => {
+    setCurrentIndex((currentIndex === 0) ? images.length - 1 : currentIndex - 1);
+  };
+
+  const nextImage = () => {
+    setCurrentIndex((currentIndex === images.length - 1) ? 0 : currentIndex + 1);
+  };
+
+  
 
   return (
     <>
@@ -27,13 +51,30 @@ const ProductDetails = ({ Server }) => {
 
 
       <div className="flex flex-col lg:flex-row gap-6 mt-6">
-        <div className="w-full lg:w-1/2 flex items-center justify-center">
-          <img
-            src={product.image}
-            alt="Product image"
-            className="object-cover rounded-md w-full max-h-[500px]"
-          />
-        </div>
+      <div className="w-full lg:w-1/2 flex items-center justify-center relative">
+  <img
+    src={images[currentIndex]}
+    alt={`Product image ${currentIndex + 1}`}
+    className="object-cover rounded-md w-full max-h-[500px]"
+  />
+  {/* Prev Button */}
+  <button
+    onClick={prevImage}
+    className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-1 rounded-full hover:bg-opacity-70"
+    aria-label="Previous"
+  >
+    &#8592;
+  </button>
+  {/* Next Button */}
+  <button
+    onClick={nextImage}
+    className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-1 rounded-full hover:bg-opacity-70"
+    aria-label="Next"
+  >
+    &#8594;
+  </button>
+</div>
+
 
 
         <div className="w-full lg:w-1/2 space-y-3">
@@ -73,7 +114,7 @@ const ProductDetails = ({ Server }) => {
             <span className="p-1 bg-black text-yellow-400 rounded-md">
               <AiOutlineStar />
             </span>
-            <span className="p-1 ml-2 border rounded-md font-bold">2.4</span>
+            <span className="p-1 ml-2 border rounded-md font-bold">{product.rating}</span>
           </div>
 
 
@@ -125,12 +166,20 @@ const ProductDetails = ({ Server }) => {
       <div className="pt-16">
             
             <h1>Other image of Product</h1>
-            <div className='w-20 flex gap-3 pt-3'>
-                <img src={product.image1} alt="" />
-                <img src={product.image2} alt="" />
-                <img src={product.image3} alt="" />
-                <img src={product.image3} alt="" />
-            </div>
+            <div className='flex gap-3 pt-3'>
+  {images.slice(1).map((img, idx) => (
+    <img
+      key={idx}
+      src={img}
+      alt={`Thumb ${idx + 1}`}
+      className={`w-[72px] lg:w-24 h-auto rounded cursor-pointer border-2 ${
+        currentIndex === idx + 1 ? 'border-black' : 'border-transparent'
+      }`}
+      onClick={() => setCurrentIndex(idx + 1)}
+    />
+  ))}
+</div>
+
       </div>
 
       {/* <div className="mt-4 space-x-3 text-sm text-gray-600 flex flex-wrap">
