@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const PageLayout = () => {
   return (
-    <div className='min-h-screen grid grid-rows-[auto_1fr_auto]'>
+    <div className='min-h-screen '>
         <Navbar />
         <Outlet />
         <Footer />

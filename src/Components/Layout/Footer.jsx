@@ -12,11 +12,11 @@ const Footer = () => {
         <div className="lg:grid flex flex-col text-white lg:grid-cols-5 w-full bg-black lg:p-20">
           <div className="col-span-2 lg:p-5 flex lg:flex-col flex-col-reverse ">
             <p className="lg:text-left text-center leading-snug lg:text-lg font-light font-sans text-stone-300 pt-3">
-              We provide comfy tote bags that <br className="lg:hidden" /> won't{" "}
-              <br className="hidden lg:block" /> mess up your style and have
-              plenty of
-              <br className="lg:hidden" /> space for all{" "}
-              <br className="hidden lg:block" /> your stuff.
+              We provide quality <br className="lg:hidden" /> services{" "}
+              <br className="hidden lg:block" />to all our dear customers
+              with plenty 
+              <br className="lg:hidden" /> of trust{" "}
+              <br className="hidden lg:block" /> and honesty.
             </p>
             <h1 className="lg:text-5xl text-2xl w-74 font-semi-bold mt-10 flex gap-2">
               BuyAmNow
