@@ -24,12 +24,14 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <h1 className="lg:text-3xl text-2xl text-black w-74 font-semibold lg:p-5 flex gap-[0.5px] lg:gap-2">
+         <Link to='/'>
+         <h1 className="lg:text-3xl text-2xl text-black w-74 font-semibold lg:p-5 flex gap-[0.5px] lg:gap-2">
             BuyAmNow
             <span className="border border-green-950 lg:size-5 size-4 flex justify-center items-center text-xs lg:text-sm rounded-full ">
               R
             </span>
           </h1>
+         </Link>
 
           <div className="flex justify-center items-center gap-x-3">
             <button>

@@ -101,7 +101,7 @@ const ShoppingCart = () => {
 </div>
 
       <div className='pt-14'>
-        <Link to="/payment">
+        <Link to="">
         <button className='flex items-center gap-1 text-white bg-black rounded-lg py-2 pl-4 pr-[121px] lg:pr-64'>Payment options <span><IoCard /></span> </button>
         </Link>
       </div>
