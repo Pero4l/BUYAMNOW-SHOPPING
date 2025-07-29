@@ -7,7 +7,6 @@ import PageLayout from './Components/Layout/PageLayout'
 import Home from './Components/Pages/Home'
 import ShoppingCart from './Components/Pages/ShoppingCart'
 import { Server } from './LocalServer'
-import CartView from './Components/cart'
 import ProductDetails from './Components/Pages/ProductDetails'
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
             <Route path="/" element={<Home  Server={Server}/>} />
             <Route path="/cart" element={<ShoppingCart />} />
             <Route path='/product/:id' element={<ProductDetails Server={Server}/> } />
-            <Route path="/cartview" element={<CartView />} />
             </Route>
         </Routes>
       </div>

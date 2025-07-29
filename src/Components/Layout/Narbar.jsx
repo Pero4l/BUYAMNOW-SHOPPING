@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="flex justify-center items-center gap-x-3">
             <button>
               {" "}
-              <LuUserRound className="lg:text-3xl text-xl font-bold text-black" />
+              <LuUserRound className="lg:text-3xl text-xl font-bold text-black relative bottom-1" />
             </button>
             
             <Link to="/cart">
@@ -43,11 +43,7 @@ const Navbar = () => {
             </button>
             </Link>
 
-            <div className="lg:hidden flex flex-col justify-center items-end gap-[2.5px]">
-              <span className="w-5 h-1 bg-black rounded-full"></span>
-              <span className="w-5 h-1 bg-black rounded-full"></span>
-              <span className="w-4 h-1 bg-black rounded-full"></span>
-            </div>
+           <TbMenuDeep className="text-3xl lg:hidden"/>
           </div>
         </nav>
 
