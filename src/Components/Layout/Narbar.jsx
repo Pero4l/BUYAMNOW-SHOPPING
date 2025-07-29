@@ -70,7 +70,7 @@ const Navbar = () => {
           </button>
           <input
             type="text"
-            placeholder="search for your favourite totebags.."
+            placeholder="search for your favourite product.."
             className="focus:outline-none border-none w-full h-full pl-13"
           />
           <button className="absolute top-[4px] right-[3px] h-12 size-12 flex justify-center gap-3 items-center bg-black rounded-lg text-white text-2xl">

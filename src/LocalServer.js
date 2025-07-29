@@ -7,6 +7,7 @@ export const Server = [{
     category: "Fashion",
     rating: 4.5,
     stock: 50,
+    location: "New York"
 },
 
 {
@@ -18,6 +19,7 @@ export const Server = [{
     category: "Accessories",
     rating: 4.7,
     stock: 30,
+    location: "New York"
 },
 {
     id: 3,
@@ -28,6 +30,7 @@ export const Server = [{
     category: "Bags",
     rating: 4.2,
     stock: 100,
+    location: "New York"
 },
 {
     id: 4,
@@ -38,6 +41,7 @@ export const Server = [{
     category: "Bags",
     rating: 4.6,
     stock: 20,
+    location: "New York"
 },
 {
     id: 5,
@@ -48,6 +52,7 @@ export const Server = [{
     category: "Fashion",
     rating: 4.8,
     stock: 15,
+    location: "New York"
 },
 {
     id: 6,
@@ -58,6 +63,7 @@ export const Server = [{
     category: "Bags",
     rating: 4.9,
     stock: 10,
+    location: "New York"
 },
 {
     id: 7,
@@ -68,4 +74,5 @@ export const Server = [{
     category: "Electronics",
     rating: 4.3,
     stock: 40,
+    location: "New York"
 }] 
